@@ -1,5 +1,4 @@
-Python Setup Mac OS X
-=====================
+#Python Setup Mac OS X
 
 Download and install XCode:
 

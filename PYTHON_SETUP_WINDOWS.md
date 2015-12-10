@@ -1,5 +1,4 @@
-Python Setup Windows
-====================
+#Python Setup Windows
 
 Download Python 2.7.X Windows Installer from:
 
