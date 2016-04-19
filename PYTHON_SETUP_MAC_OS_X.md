@@ -1,5 +1,7 @@
 #Python Setup Mac OS X
 
+##Setup Python
+
 Download and install XCode:
 
 <https://developer.apple.com/xcode/>
@@ -36,4 +38,10 @@ Make a directory to store virtual environments:
 
 ```shell
 mkdir ~/virtualenvs
+```
+
+##Setup Git
+
+```shell
+brew install git
 ```

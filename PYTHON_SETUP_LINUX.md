@@ -1,5 +1,11 @@
 #Python Setup Linux
 
+##Setup Git
+
+<https://github.com/janelia-idf/git_setup>
+
+##Setup Python
+
 The latest versions of many Linux distributions come with Python 2.7
 out of the box.
 

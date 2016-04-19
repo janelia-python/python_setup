@@ -1,31 +1,26 @@
 #Python Setup Windows
 
+##Setup Git and Git Bash
+
+<https://github.com/janelia-idf/git_setup>
+
+##Setup Python
+
 Download Python 2.7.X Windows Installer from:
 
 <https://www.python.org/download>
 
-Add to path:
+Install all features, including pip and adding python.exe to Path.
 
-    C:\Python27\
-
-Download get-pip.py from:
-
-<https://bootstrap.pypa.io/get-pip.py>
-
-Run:
-
-```shell
-python get-pip.py
-```
-
-Add to path:
-
-    C:\Python27\Scripts\
-
-Run:
+Open git bash terminal:
 
 ```shell
 pip install virtualenv
-mkdir C:\virtualenvs
 pip install ipython
+```
+
+Make a directory to store virtual environments:
+
+```shell
+mkdir ~/virtualenvs
 ```
