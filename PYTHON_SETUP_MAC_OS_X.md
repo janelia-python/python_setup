@@ -26,12 +26,41 @@ Open a new terminal to complete the PATH modification or run:
 source ~/.profile
 ```
 
-Install Python 2.7, virtualenv, and ipython:
+Update brew:
+
+```shell
+sudo chown -R $(whoami):admin /usr/local
+brew update
+```
+
+##Setup Git
+
+```shell
+brew install git
+```
+
+Or install Python 3.x
+
+```shell
+brew install python3
+```
+
+Or install Python 2.7
 
 ```shell
 brew install python
-pip install virtualenv
-pip install ipython
+```
+
+Upgrade pip:
+
+```shell
+pip install --upgrade pip
+```
+
+Install virtualenv:
+
+```shell
+pip install virtualenv --upgrade
 ```
 
 Make a directory to store virtual environments:
@@ -40,8 +69,26 @@ Make a directory to store virtual environments:
 mkdir ~/virtualenvs
 ```
 
-##Setup Git
+Create and activate a virtual environment for either Python 3 or 2:
+
+<https://virtualenv.pypa.io/en/stable/userguide/>
+
+Example using Python 3:
 
 ```shell
-brew install git
+virtualenv -p python3 ~/virtualenvs/example_env
+source ~/virtualenvs/example_env/bin/activate
+```
+
+Example using Python 2:
+
+```shell
+virtualenv ~/virtualenvs/example_env
+source ~/virtualenvs/example_env/bin/activate
+```
+
+In an activated virtual environment, install ipython:
+
+```shell
+pip install ipython
 ```
