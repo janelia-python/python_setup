@@ -9,7 +9,7 @@ Download and install XCode:
 Install Homebrew:
 
 ```shell
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Insert Homebrew directory at the top of the PATH by adding the
