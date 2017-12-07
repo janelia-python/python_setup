@@ -2,7 +2,7 @@
 
 ##Setup Git and Git Bash
 
-<https://github.com/janelia-idf/git_setup>
+<https://github.com/janelia-experimental-technology/git_setup>
 
 ##Setup Python
 
@@ -46,7 +46,7 @@ Example:
 
 ```shell
 virtualenv ~/virtualenvs/example_env
-source ~/virtualenvs/example_env/bin/activate
+source ~/virtualenvs/example_env/Scripts/activate
 ```
 
 In an activated virtual environment, install ipython:

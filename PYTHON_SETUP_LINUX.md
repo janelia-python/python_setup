@@ -2,7 +2,7 @@
 
 ##Setup Git
 
-<https://github.com/janelia-idf/git_setup>
+<https://github.com/janelia-experimental-technology/git_setup>
 
 ##Setup Python
 
