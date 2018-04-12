@@ -1,0 +1,100 @@
+#+TITLE: Python Setup Mac OS X
+#+AUTHOR: Peter Polidoro
+#+EMAIL: peterpolidoro@gmail.com
+
+* Repository Information
+  - Author :: Peter Polidoro
+  - License :: BSD
+
+* Setup Python
+
+  Download and install XCode:
+
+  [[https://developer.apple.com/xcode/]]
+
+  Install Homebrew:
+
+  #+BEGIN_SRC sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  #+END_SRC
+
+  Insert Homebrew directory at the top of the PATH by adding the
+  following line to the bottom of your ~/.profile file (create it if it
+  does not exist):
+
+  #+BEGIN_SRC sh
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+  #+END_SRC
+
+  Open a new terminal to complete the PATH modification or run:
+
+  #+BEGIN_SRC sh
+source ~/.profile
+  #+END_SRC
+
+  Update brew:
+
+  #+BEGIN_SRC sh
+sudo chown -R $(whoami):admin /usr/local
+brew update
+  #+END_SRC
+
+* Setup Git
+
+  #+BEGIN_SRC sh
+brew install git
+  #+END_SRC
+
+  Or install Python 3.x
+
+  #+BEGIN_SRC sh
+brew install python3
+  #+END_SRC
+
+  Or install Python 2.7
+
+  #+BEGIN_SRC sh
+brew install python
+  #+END_SRC
+
+  Upgrade pip:
+
+  #+BEGIN_SRC sh
+pip install --upgrade pip
+  #+END_SRC
+
+  Install virtualenv:
+
+  #+BEGIN_SRC sh
+pip install virtualenv --upgrade
+  #+END_SRC
+
+  Make a directory to store virtual environments:
+
+  #+BEGIN_SRC sh
+mkdir ~/virtualenvs
+  #+END_SRC
+
+  Create and activate a virtual environment for either Python 3 or 2:
+
+  [[https://virtualenv.pypa.io/en/stable/userguide/]]
+
+  Example using Python 3:
+
+  #+BEGIN_SRC sh
+virtualenv -p python3 ~/virtualenvs/example_env
+source ~/virtualenvs/example_env/bin/activate
+  #+END_SRC
+
+  Example using Python 2:
+
+  #+BEGIN_SRC sh
+virtualenv ~/virtualenvs/example_env
+source ~/virtualenvs/example_env/bin/activate
+  #+END_SRC
+
+  In an activated virtual environment, install ipython:
+
+  #+BEGIN_SRC sh
+pip install ipython
+  #+END_SRC

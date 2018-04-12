@@ -1,0 +1,15 @@
+#+TITLE: python_setup
+#+AUTHOR: Peter Polidoro
+#+EMAIL: peterpolidoro@gmail.com
+
+* Repository Information
+  - Author :: Peter Polidoro
+  - License :: BSD
+
+* Documentation
+
+  [[./PYTHON_SETUP_LINUX.org][Setup Python for Linux]]
+
+  [[./PYTHON_SETUP_MAC_OS_X.org][Setup Python for Mac OS X]]
+
+  [[./PYTHON_SETUP_WINDOWS.org][Setup Python for Windows]]

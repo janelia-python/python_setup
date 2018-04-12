@@ -1,0 +1,62 @@
+#+TITLE: Python Setup Windows
+#+AUTHOR: Peter Polidoro
+#+EMAIL: peterpolidoro@gmail.com
+
+* Repository Information
+  - Author :: Peter Polidoro
+  - License :: BSD
+
+* Setup Git and Git Bash
+
+  [[https://github.com/janelia-experimental-technology/git_setup]]
+
+* Setup Python
+
+  Download Python 3.X Windows Installer from:
+
+  [[https://www.python.org/download]]
+
+  Or download Python 2.7.X Windows Installer from:
+
+  [[https://www.python.org/download]]
+
+  Install all features, including pip and adding python.exe to Path.
+
+  Restart computer.
+
+  Open git bash terminal:
+
+  Upgrade pip:
+
+  #+BEGIN_SRC sh
+pip install --upgrade pip
+  #+END_SRC
+
+  Install virtualenv:
+
+  #+BEGIN_SRC sh
+pip install virtualenv --upgrade
+  #+END_SRC
+
+  Make a directory to store virtual environments:
+
+  #+BEGIN_SRC sh
+mkdir ~/virtualenvs
+  #+END_SRC
+
+  Create and activate a virtual environment:
+
+  [[https://virtualenv.pypa.io/en/stable/userguide/]]
+
+  Example:
+
+  #+BEGIN_SRC sh
+virtualenv ~/virtualenvs/example_env
+source ~/virtualenvs/example_env/Scripts/activate
+  #+END_SRC
+
+  In an activated virtual environment, install ipython:
+
+  #+BEGIN_SRC sh
+pip install ipython
+  #+END_SRC
