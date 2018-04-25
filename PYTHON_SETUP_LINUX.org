@@ -12,8 +12,36 @@
 
 * Setup Python
 
-  The latest versions of many Linux distributions come with Python 2.7
-  and 3.x out of the box.
+** Python 3
+
+  The latest versions of many Linux distributions come with Python 3.x out of
+  the box.
+
+  Make a directory to store virtual environments:
+
+  #+BEGIN_SRC sh
+    mkdir ~/venvs
+  #+END_SRC
+
+  Create and activate a virtual environment:
+
+  [[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
+
+  #+BEGIN_SRC sh
+    python3 -m venv ~/venvs/example_env
+    source ~/venvs/example_env/bin/activate
+  #+END_SRC
+
+  In an activated virtual environment, upgrade pip and ipython:
+
+  #+BEGIN_SRC sh
+    pip install pip --upgrade
+    pip install ipython --upgrade
+  #+END_SRC
+
+** Python 2
+
+  Many versions of many Linux distributions come with Python 2.7 out of the box.
 
   Install virtualenv:
 
@@ -22,35 +50,27 @@
   Example:
 
   #+BEGIN_SRC sh
-sudo apt-get install virtualenv
+    sudo apt-get install virtualenv
   #+END_SRC
 
   Make a directory to store virtual environments:
 
   #+BEGIN_SRC sh
-mkdir ~/virtualenvs
+    mkdir ~/venvs
   #+END_SRC
 
-  Create and activate a virtual environment for either Python 3 or 2:
+  Create and activate a virtual environment:
 
-  [[https://virtualenv.pypa.io/en/stable/userguide/]]
-
-  Example using Python 3:
+  [[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
 
   #+BEGIN_SRC sh
-virtualenv -p python3 ~/virtualenvs/example_env
-source ~/virtualenvs/example_env/bin/activate
+    virtualenv ~/venvs/example_env
+    source ~/venvs/example_env/bin/activate
   #+END_SRC
 
-  Example using Python 2:
+  In an activated virtual environment, upgrade pip and ipython:
 
   #+BEGIN_SRC sh
-virtualenv ~/virtualenvs/example_env
-source ~/virtualenvs/example_env/bin/activate
-  #+END_SRC
-
-  In an activated virtual environment, install ipython:
-
-  #+BEGIN_SRC sh
-pip install ipython
+    pip install pip --upgrade
+    pip install ipython --upgrade
   #+END_SRC

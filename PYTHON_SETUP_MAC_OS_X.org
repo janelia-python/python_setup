@@ -6,7 +6,7 @@
   - Author :: Peter Polidoro
   - License :: BSD
 
-* Setup Python
+* Setup Homebrew
 
   Download and install XCode:
 
@@ -15,7 +15,7 @@
   Install Homebrew:
 
   #+BEGIN_SRC sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   #+END_SRC
 
   Insert Homebrew directory at the top of the PATH by adding the
@@ -23,78 +23,92 @@
   does not exist):
 
   #+BEGIN_SRC sh
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   #+END_SRC
 
   Open a new terminal to complete the PATH modification or run:
 
   #+BEGIN_SRC sh
-source ~/.profile
+    source ~/.profile
   #+END_SRC
 
   Update brew:
 
   #+BEGIN_SRC sh
-sudo chown -R $(whoami):admin /usr/local
-brew update
+    sudo chown -R $(whoami):admin /usr/local
+    brew update
   #+END_SRC
 
 * Setup Git
 
   #+BEGIN_SRC sh
-brew install git
+    brew install git
   #+END_SRC
 
-  Or install Python 3.x
+* Setup Python
+
+** Python 3
 
   #+BEGIN_SRC sh
-brew install python3
-  #+END_SRC
-
-  Or install Python 2.7
-
-  #+BEGIN_SRC sh
-brew install python
-  #+END_SRC
-
-  Upgrade pip:
-
-  #+BEGIN_SRC sh
-pip install --upgrade pip
-  #+END_SRC
-
-  Install virtualenv:
-
-  #+BEGIN_SRC sh
-pip install virtualenv --upgrade
+    brew install python3
   #+END_SRC
 
   Make a directory to store virtual environments:
 
   #+BEGIN_SRC sh
-mkdir ~/virtualenvs
+    mkdir ~/venvs
   #+END_SRC
 
-  Create and activate a virtual environment for either Python 3 or 2:
+  Create and activate a virtual environment:
 
-  [[https://virtualenv.pypa.io/en/stable/userguide/]]
-
-  Example using Python 3:
+  [[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
 
   #+BEGIN_SRC sh
-virtualenv -p python3 ~/virtualenvs/example_env
-source ~/virtualenvs/example_env/bin/activate
+    python3 -m venv ~/venvs/example_env
+    source ~/venvs/example_env/bin/activate
   #+END_SRC
 
-  Example using Python 2:
+  In an activated virtual environment, upgrade pip and ipython:
 
   #+BEGIN_SRC sh
-virtualenv ~/virtualenvs/example_env
-source ~/virtualenvs/example_env/bin/activate
+    pip install pip --upgrade
+    pip install ipython --upgrade
   #+END_SRC
 
-  In an activated virtual environment, install ipython:
+** Python 2
 
   #+BEGIN_SRC sh
-pip install ipython
+    brew install python
+  #+END_SRC
+
+  Install virtualenv:
+
+  [[https://virtualenv.pypa.io/en/stable/installation/]]
+
+  Example:
+
+  #+BEGIN_SRC sh
+    pip install virtualenv --upgrade
+  #+END_SRC
+
+  Make a directory to store virtual environments:
+
+  #+BEGIN_SRC sh
+    mkdir ~/venvs
+  #+END_SRC
+
+  Create and activate a virtual environment:
+
+  [[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
+
+  #+BEGIN_SRC sh
+    virtualenv ~/venvs/example_env
+    source ~/venvs/example_env/bin/activate
+  #+END_SRC
+
+  In an activated virtual environment, upgrade pip and ipython:
+
+  #+BEGIN_SRC sh
+    pip install pip --upgrade
+    pip install ipython --upgrade
   #+END_SRC
