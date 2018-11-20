@@ -28,6 +28,7 @@
    [[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
 
    #+BEGIN_SRC sh
+     sudo apt-get install python3-venv
      python3 -m venv ~/venvs/example_env
      source ~/venvs/example_env/bin/activate
    #+END_SRC

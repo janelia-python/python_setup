@@ -12,8 +12,14 @@
 
 * Documentation
 
-  [[./PYTHON_SETUP_LINUX.org][Setup Python for Linux]]
+** Linux
 
-  [[./PYTHON_SETUP_MAC_OS_X.org][Setup Python for Mac OS X]]
+  [[https://github.com/janelia-pypi/python_setup/blob/master/PYTHON_SETUP_LINUX.org]]
 
-  [[./PYTHON_SETUP_WINDOWS.org][Setup Python for Windows]]
+** Mac OS X
+
+  [[https://github.com/janelia-pypi/python_setup/blob/master/PYTHON_SETUP_MAC_OS_X.org]]
+
+** Windows
+
+  [[https://github.com/janelia-pypi/python_setup/blob/master/PYTHON_SETUP_WINDOWS.org]]
