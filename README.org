@@ -3,8 +3,12 @@
 #+EMAIL: peterpolidoro@gmail.com
 
 * Repository Information
-  - Author :: Peter Polidoro
+  - Name :: python_setup
+  - Version :: 1.0.0
   - License :: BSD
+  - URL :: https://github.com/janelia-pypi/python_setup
+  - Author :: Peter Polidoro
+  - Email :: peterpolidoro@gmail.com
 
 * Documentation
 
