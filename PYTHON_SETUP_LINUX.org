@@ -3,75 +3,115 @@
 #+EMAIL: peter@polidoro.io
 
 * Repository Information
-  - Author :: Peter Polidoro
-  - License :: BSD
+- Author :: Peter Polidoro
+- License :: BSD
 
 * Setup Git
 
-  [[https://github.com/janelia-experimental-technology/git_setup]]
+[[https://github.com/janelia-experimental-technology/git_setup]]
 
-* Setup Python
+* Install
 
-** Python 3
+** Debian-based GNU/Linux Distributions
 
-   The latest versions of many Linux distributions come with Python 3.x out of
-   the box.
+*** Python
 
-   Make a directory to store virtual environments:
+The latest versions of most Debian-based GNU/Linux distributions come with
+Python 3.x out of the box.
 
-   #+BEGIN_SRC sh
-     mkdir ~/venvs
-   #+END_SRC
+*** pip and development tools
 
-   Create and activate a virtual environment:
+#+BEGIN_SRC sh
 
-   [[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
+sudo apt install -y python3-pip
+sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
+sudo apt install -y python3-venv
 
-   #+BEGIN_SRC sh
-     sudo apt-get install python3-venv
-     python3 -m venv ~/venvs/example_env
-     source ~/venvs/example_env/bin/activate
-   #+END_SRC
+#+END_SRC
 
-   In an activated virtual environment, upgrade pip and ipython:
+** Guix
 
-   #+BEGIN_SRC sh
-     pip install pip --upgrade
-     pip install ipython --upgrade
-   #+END_SRC
+#+BEGIN_SRC sh
 
-** Python 2
+guix install python python-setuptools
 
-   Many versions of many Linux distributions come with Python 2.7 out of the box.
+#+END_SRC
 
-   Install virtualenv:
+* Development
 
-   [[https://virtualenv.pypa.io/en/stable/installation/]]
+** Virtualenv
 
-   Example:
+Make a directory to store virtual environments:
 
-   #+BEGIN_SRC sh
-     sudo apt-get install virtualenv
-   #+END_SRC
+#+BEGIN_SRC sh
+mkdir ~/venvs
+#+END_SRC
 
-   Make a directory to store virtual environments:
+Create and activate a virtual environment:
 
-   #+BEGIN_SRC sh
-     mkdir ~/venvs
-   #+END_SRC
+[[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
 
-   Create and activate a virtual environment:
+#+BEGIN_SRC sh
 
-   [[https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments]]
+python3 -m venv ~/venvs/example_env
+source ~/venvs/example_env/bin/activate
 
-   #+BEGIN_SRC sh
-     virtualenv ~/venvs/example_env
-     source ~/venvs/example_env/bin/activate
-   #+END_SRC
+#+END_SRC
 
-   In an activated virtual environment, upgrade pip and ipython:
+In an activated virtual environment, upgrade pip and ipython:
 
-   #+BEGIN_SRC sh
-     pip install pip --upgrade
-     pip install ipython --upgrade
-   #+END_SRC
+#+BEGIN_SRC sh
+
+pip install pip --upgrade
+pip install ipython --upgrade
+
+#+END_SRC
+
+** Docker
+
+*** Build Docker Image
+
+#+BEGIN_SRC sh
+
+docker stop $(docker ps -aq)
+docker system prune -f
+docker build -t python_package_development:latest .
+
+#+END_SRC
+
+*** Run Docker Container
+
+#+BEGIN_SRC sh
+
+docker run -it --device=/dev/ttyACM0 python_package_development:latest
+
+#+END_SRC
+
+*** Install This Package
+
+#+BEGIN_SRC sh
+
+cd python_package
+python setup.py install
+
+#+END_SRC
+
+*** Run ipython and Test
+
+#+BEGIN_SRC sh
+
+ipython
+
+#+END_SRC
+
+*** Commit, Tag, and Upload to Pypi
+
+#+BEGIN_SRC sh
+
+# git commit ...
+# git tag ...
+python3 setup.py sdist bdist_wheel
+twine upload dist/*
+git clean -xdf
+
+#+END_SRC
