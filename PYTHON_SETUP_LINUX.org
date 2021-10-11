@@ -23,9 +23,9 @@ Python 3.x out of the box.
 
 #+BEGIN_SRC sh
 
-sudo apt install -y python3-pip
+sudo apt install -y python3-pip python3-setuptools python3-setuptools-scm
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
-sudo apt install -y python3-venv
+sudo apt install -y python3-venv twine python3-wheel
 
 #+END_SRC
 
