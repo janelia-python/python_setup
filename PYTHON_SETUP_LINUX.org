@@ -41,21 +41,13 @@ sudo apt install -y python3-venv twine
 
 #+END_SRC
 
-*** Guix
-
-#+BEGIN_SRC sh
-
-guix install python-virtualenv python-twine
-
-#+END_SRC
-
 *** Create and Activate Virtual Environment
 
 #+BEGIN_SRC sh
 
-mkdir ~/venvs
-python3 -m venv ~/venvs/example_env
-source ~/venvs/example_env/bin/activate
+rm -rf venv
+python3 -m venv venv
+source venv/bin/activate
 
 #+END_SRC
 
@@ -64,8 +56,6 @@ source ~/venvs/example_env/bin/activate
 #+BEGIN_SRC sh
 
 python setup.py install
-python -m pip install ipython
-ipython
 
 #+END_SRC
 
@@ -86,40 +76,11 @@ git clean -xdf
 
 #+END_SRC
 
-** Direnv
-
-*** Debian-based GNU/Linux Distributions
-
-#+BEGIN_SRC sh
-
-sudo apt install -y direnv
-
-#+END_SRC
-
-*** Guix
-
-#+BEGIN_SRC sh
-
-guix install direnv
-
-#+END_SRC
-
-*** Copy .envrc file into Python Project Directory
-
-#+BEGIN_SRC sh
-
-cp python_setup/.envrc python_project/
-cd python_project
-
-#+END_SRC
-
 *** Manual Testing
 
 #+BEGIN_SRC sh
 
 python setup.py install
-python -m pip install ipython
-ipython
 
 #+END_SRC
 
@@ -136,6 +97,17 @@ twine upload dist/*
 
 #+BEGIN_SRC sh
 
+git clean -xdf
+
+#+END_SRC
+
+** Guix
+
+#+BEGIN_SRC sh
+
+guix time-machine -C channels.scm -- shell -D -f guix.scm
+python3 setup.py sdist bdist_wheel
+twine upload dist/*
 git clean -xdf
 
 #+END_SRC
