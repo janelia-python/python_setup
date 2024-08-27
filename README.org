@@ -6,7 +6,7 @@
   - Name :: python_setup
   - Version :: 1.0.0
   - License :: BSD
-  - URL :: https://github.com/janelia-pypi/python_setup
+  - URL :: https://github.com/janelia-python/python_setup
   - Author :: Peter Polidoro
   - Email :: peter@polidoro.io
 
@@ -14,12 +14,12 @@
 
 ** Linux
 
-  [[https://github.com/janelia-pypi/python_setup/blob/master/PYTHON_SETUP_LINUX.org]]
+  [[https://github.com/janelia-python/python_setup/blob/master/PYTHON_SETUP_LINUX.org]]
 
 ** Mac OS X
 
-  [[https://github.com/janelia-pypi/python_setup/blob/master/PYTHON_SETUP_MAC_OS_X.org]]
+  [[https://github.com/janelia-python/python_setup/blob/master/PYTHON_SETUP_MAC_OS_X.org]]
 
 ** Windows
 
-  [[https://github.com/janelia-pypi/python_setup/blob/master/PYTHON_SETUP_WINDOWS.org]]
+  [[https://github.com/janelia-python/python_setup/blob/master/PYTHON_SETUP_WINDOWS.org]]
